@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="weather-bg" id="weatherBg">
+  <div class="sun"></div>
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
+  <div class="rain"></div>
+</div>
+
+  <div class="container">
+
+    <h1>🌦️ Weather App</h1>
+
+    <form id="searchForm">
+      <input type="text" id="cityInput" placeholder="Search a city..." required>
+      <button type="submit">Search</button>
+      <button type="button" id="locationBtn" title="Use my location">📍</button>
+    </form>
+
+    <div id="suggestions" class="suggestions hidden"></div>
+
+    <p id="errorMsg" class="error"></p>
+
+    <div id="loading" class="weather-card skeleton-card hidden">
+      <div class="card-top">
+        <div>
+          <div class="skel-line skel-title"></div>
+          <div class="skel-line skel-sub"></div>
+        </div>
+        <div class="skel-pill"></div>
+      </div>
+
+      <div class="main-info">
+        <div class="skel-circle"></div>
+        <div class="skel-line skel-temp"></div>
+      </div>
+
+      <div class="skel-line skel-desc"></div>
+
+      <div class="details">
+        <div class="skel-box"></div>
+        <div class="skel-box"></div>
+        <div class="skel-box"></div>
+      </div>
+
+      <div class="skel-line skel-heading"></div>
+      <div class="forecast">
+        <div class="skel-box tall"></div>
+        <div class="skel-box tall"></div>
+        <div class="skel-box tall"></div>
+        <div class="skel-box tall"></div>
+        <div class="skel-box tall"></div>
+      </div>
+    </div>
+
+    <div id="weatherCard" class="weather-card hidden">
+
+      <div class="card-top">
+        <div>
+          <h2 id="cityName">City</h2>
+          <p id="dateTime"></p>
+        </div>
+        <button type="button" id="unitToggle" title="Switch °C / °F">°C</button>
+      </div>
+
+      <div class="main-info">
+        <span id="weatherIcon" class="icon">☀️</span>
+        <span id="temp" class="temp">--°</span>
+      </div>
+
+      <p id="description" class="description">--</p>
+      <p id="feelsLike">Feels like --°</p>
+
+      <div class="details">
+        <div class="detail-box">
+          <span class="detail-icon">💧</span>
+          <p class="detail-label">Humidity</p>
+          <p id="humidity" class="detail-value">--%</p>
+        </div>
+        <div class="detail-box">
+          <span class="detail-icon">💨</span>
+          <p class="detail-label">Wind</p>
+          <p id="wind" class="detail-value">-- km/h</p>
+        </div>
+        <div class="detail-box">
+          <span class="detail-icon">🧭</span>
+          <p class="detail-label">Pressure</p>
+          <p id="pressure" class="detail-value">-- hPa</p>
+        </div>
+      </div>
+
+      <h3>5-Day Forecast</h3>
+      <div id="forecast" class="forecast"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
